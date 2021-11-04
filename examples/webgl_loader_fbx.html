@@ -67,7 +67,13 @@
 
 			// Create a material
 			var textureLoader = new THREE.TextureLoader();
-			var map = textureLoader.load('models/fbx/WitchTexture.png');
+			// var map = textureLoader.load('models/fbx/WitchTexture.png');
+
+			var map = [
+				textureLoader.load('models/fbx/GirlFace2.png'),
+				textureLoader.load('models/fbx/GirlBody2.png'), 
+				textureLoader.load('models/fbx/WitchTexture.png')
+			];
 			var material = new THREE.MeshPhongMaterial({ map: map });
 
 			// model
