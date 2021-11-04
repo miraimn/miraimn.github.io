@@ -10,7 +10,7 @@
 
 <body>
 	<div id="info">
-		<h1>Mirai - materials - 3</h1>
+		<h1>Mirai - materials - 17:14</h1>
 	</div>
 
 	<script type="module">
@@ -71,18 +71,10 @@
 			var bodyMat = textureLoader.load('models/fbx/GirlBody2.png');
 			var clothMat = textureLoader.load('models/fbx/WitchTexture.png');
 
-
-			// var map = [
-			// 	textureLoader.load('models/fbx/GirlFace2.png'),
-			// 	textureLoader.load('models/fbx/GirlBody2.png'), 
-			// 	textureLoader.load('models/fbx/WitchTexture.png')
-			// ];
-
-			var materials = [
-				new THREE.MeshBasicMaterial({ normalMap: faceMat }),
-				new THREE.MeshBasicMaterial({ normalMap: bodyMat }),
-				new THREE.MeshBasicMaterial({ normalMap: clothMat })
-			];
+			var materials = [];
+			materials.push(new THREE.MeshBasicMaterial({ map: faceMat }));
+			materials.push(new THREE.MeshBasicMaterial({ map: bodyMat }));
+			materials.push(new THREE.MeshBasicMaterial({ map: clothMat }));
 
 			// model
 			const loader = new FBXLoader();
@@ -100,7 +92,6 @@
 						child.receiveShadow = true;
 						child.material = materials;
 					}
-					child.scale(3, 3, 3);
 				});
 
 				scene.add(object);
