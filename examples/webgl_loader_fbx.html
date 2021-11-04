@@ -10,7 +10,7 @@
 
 <body>
 	<div id="info">
-		<h1>Mirai - ADD SCALE - 4</h1>
+		<h1>Mirai - 3 mate - 4</h1>
 	</div>
 
 	<script type="module">
@@ -67,7 +67,10 @@
 
 			// Create a material
 			var textureLoader = new THREE.TextureLoader();
-			var map = textureLoader.load('models/fbx/GirlFace2.png');
+			var faceMat = textureLoader.load('models/fbx/GirlFace2.png');
+			var bodyMat = textureLoader.load('models/fbx/GirlBody2.png');
+			var clothMat = textureLoader.load('models/fbx/WitchTexture.png');
+
 
 			// var map = [
 			// 	textureLoader.load('models/fbx/GirlFace2.png'),
@@ -75,7 +78,11 @@
 			// 	textureLoader.load('models/fbx/WitchTexture.png')
 			// ];
 
-			var material = new THREE.MeshPhongMaterial({ map: map });
+			var materials = [
+				new THREE.MeshBasicMaterial({ normalMap: faceMat }),
+				new THREE.MeshBasicMaterial({ normalMap: bodyMat }),
+				new THREE.MeshBasicMaterial({ normalMap: clothMat })
+			];
 
 			// model
 			const loader = new FBXLoader();
@@ -91,9 +98,9 @@
 					if (child.isMesh) {
 						child.castShadow = true;
 						child.receiveShadow = true;
+						child.material = materials;
 					}
-					if (child.isMesh) child.material = material;
-					child.scale(3,3,3);
+					child.scale(3, 3, 3);
 				});
 
 				scene.add(object);
