@@ -81,14 +81,12 @@
 
 						if ( child.isMesh ) {
 
-							child.castShadow = false;
-							child.receiveShadow = false;
+							child.castShadow = true;
+							child.receiveShadow = true;
 
 						}
 
 					} );
-
-					// object.scale(new Vector(1000, 1000, 1000));
 
 					scene.add( object );
 
