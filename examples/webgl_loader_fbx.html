@@ -70,7 +70,7 @@
 
 				// model
 				const loader = new FBXLoader();
-				loader.load( 'models/fbx/witch.fbx', function ( object ) {
+				loader.load( 'models/fbx/Walking.fbx', function ( object ) {
 
 					mixer = new THREE.AnimationMixer( object );
 
@@ -88,7 +88,7 @@
 
 					} );
 
-					object.scale(new Vector(1000, 1000, 1000));
+					// object.scale(new Vector(1000, 1000, 1000));
 
 					scene.add( object );
 
