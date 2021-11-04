@@ -9,8 +9,7 @@
 
 	<body>
 		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - FBXLoader<br />
-			Character and animation from <a href="https://www.mixamo.com/" target="_blank" rel="noopener">Mixamo</a>
+			<h1>Mirai</h1>
 		</div>
 
 		<script type="module">
@@ -82,14 +81,14 @@
 
 						if ( child.isMesh ) {
 
-							child.castShadow = true;
-							child.receiveShadow = true;
+							child.castShadow = false;
+							child.receiveShadow = false;
 
 						}
 
 					} );
 
-					object.scale(new Vector(100, 100, 100));
+					object.scale(new Vector(1000, 1000, 1000));
 
 					scene.add( object );
 
