@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>MIRAI</title>
+		<title>three.js webgl - FBX loader</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
@@ -9,7 +9,8 @@
 
 	<body>
 		<div id="info">
-			MIRAI
+			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - FBXLoader<br />
+			Character and animation from <a href="https://www.mixamo.com/" target="_blank" rel="noopener">Mixamo</a>
 		</div>
 
 		<script type="module">
@@ -70,7 +71,7 @@
 
 				// model
 				const loader = new FBXLoader();
-				loader.load( 'models/fbx/SantavsWitch.fbx', function ( object ) {
+				loader.load( 'models/fbx/Samba Dancing.fbx', function ( object ) {
 
 					mixer = new THREE.AnimationMixer( object );
 
