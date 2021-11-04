@@ -10,7 +10,7 @@
 
 <body>
 	<div id="info">
-		<h1>Mirai - materials - 17:14</h1>
+		<h1>Mirai - materials - 17:25</h1>
 	</div>
 
 	<script type="module">
@@ -72,19 +72,16 @@
 			var clothMat = textureLoader.load('models/fbx/WitchTexture.png');
 
 			var materials = [];
-			materials.push(new THREE.MeshBasicMaterial({ map: faceMat }));
-			materials.push(new THREE.MeshBasicMaterial({ map: bodyMat }));
-			materials.push(new THREE.MeshBasicMaterial({ map: clothMat }));
+			materials.push(new THREE.MeshLambertMaterial({ map: faceMat }));
+			materials.push(new THREE.MeshLambertMaterial({ map: bodyMat }));
+			materials.push(new THREE.MeshLambertMaterial({ map: clothMat }));
 
 			// model
 			const loader = new FBXLoader();
 			loader.load('models/fbx/Walking3.fbx', function (object) {
-
 				mixer = new THREE.AnimationMixer(object);
-
 				const action = mixer.clipAction(object.animations[0]);
 				action.play();
-
 				object.traverse(function (child) {
 
 					if (child.isMesh) {
@@ -92,6 +89,7 @@
 						child.receiveShadow = true;
 						child.material = materials;
 					}
+
 				});
 
 				scene.add(object);
