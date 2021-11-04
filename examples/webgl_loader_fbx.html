@@ -10,7 +10,7 @@
 
 <body>
 	<div id="info">
-		<h1>Mirai - ADD MATERIALs - 4</h1>
+		<h1>Mirai - ADD SCALE - 4</h1>
 	</div>
 
 	<script type="module">
@@ -79,7 +79,7 @@
 
 			// model
 			const loader = new FBXLoader();
-			loader.load('models/fbx/Walking3.fbx', function (object) {
+			loader.load('models/fbx/Walking.fbx', function (object) {
 
 				mixer = new THREE.AnimationMixer(object);
 
@@ -93,6 +93,7 @@
 						child.receiveShadow = true;
 					}
 					if (child.isMesh) child.material = material;
+					child.scale(3,3,3);
 				});
 
 				scene.add(object);
