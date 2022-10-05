@@ -1,7 +1,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
 
 import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/FBXLoader.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
+// import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
 //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js';
 
 
@@ -169,49 +169,49 @@ class BasicCharacterControllerInput {
   }
 
   _onKeyDown(event) {
-    switch (event.keyCode) {
-      case 87: // w
-        this._keys.forward = true;
-        break;
-      case 65: // a
-        this._keys.left = true;
-        break;
-      case 83: // s
-        this._keys.backward = true;
-        break;
-      case 68: // d
-        this._keys.right = true;
-        break;
-      case 32: // SPACE
-        this._keys.space = true;
-        break;
-      case 16: // SHIFT
-        this._keys.shift = true;
-        break;
-    }
+    // switch (event.keyCode) {
+    //   case 87: // w
+    //     this._keys.forward = true;
+    //     break;
+    //   case 65: // a
+    //     this._keys.left = true;
+    //     break;
+    //   case 83: // s
+    //     this._keys.backward = true;
+    //     break;
+    //   case 68: // d
+    //     this._keys.right = true;
+    //     break;
+    //   case 32: // SPACE
+    //     this._keys.space = true;
+    //     break;
+    //   case 16: // SHIFT
+    //     this._keys.shift = true;
+    //     break;
+    // }
   }
 
   _onKeyUp(event) {
-    switch (event.keyCode) {
-      case 87: // w
-        this._keys.forward = false;
-        break;
-      case 65: // a
-        this._keys.left = false;
-        break;
-      case 83: // s
-        this._keys.backward = false;
-        break;
-      case 68: // d
-        this._keys.right = false;
-        break;
-      case 32: // SPACE
-        this._keys.space = false;
-        break;
-      case 16: // SHIFT
-        this._keys.shift = false;
-        break;
-    }
+    // switch (event.keyCode) {
+    //   case 87: // w
+    //     this._keys.forward = false;
+    //     break;
+    //   case 65: // a
+    //     this._keys.left = false;
+    //     break;
+    //   case 83: // s
+    //     this._keys.backward = false;
+    //     break;
+    //   case 68: // d
+    //     this._keys.right = false;
+    //     break;
+    //   case 32: // SPACE
+    //     this._keys.space = false;
+    //     break;
+    //   case 16: // SHIFT
+    //     this._keys.shift = false;
+    //     break;
+    // }
   }
 };
 
@@ -258,9 +258,9 @@ class CharacterFSM extends FiniteStateMachine {
   }
 
   _Init() {
-    this._AddState('idle', IdleState);
-    this._AddState('walk', WalkState);
-    this._AddState('run', RunState);
+    // this._AddState('idle', IdleState);
+    // this._AddState('walk', WalkState);
+    // this._AddState('run', RunState);
     this._AddState('dance', DanceState);
   }
 };
@@ -552,22 +552,22 @@ class CharacterControllerDemo {
     // controls.target.set(0, 10, 0);
     // controls.update();
 
-    const loader = new THREE.CubeTextureLoader();
-    const texture = loader.load([
-      './resources/posx.jpg',
-      './resources/negx.jpg',
-      './resources/posy.jpg',
-      './resources/negy.jpg',
-      './resources/posz.jpg',
-      './resources/negz.jpg',
-    ]);
-    texture.encoding = THREE.sRGBEncoding;
+    // const loader = new THREE.CubeTextureLoader();
+    // const texture = loader.load([
+    //   './resources/posx.jpg',
+    //   './resources/negx.jpg',
+    //   './resources/posy.jpg',
+    //   './resources/negy.jpg',
+    //   './resources/posz.jpg',
+    //   './resources/negz.jpg',
+    // ]);
+    // texture.encoding = THREE.sRGBEncoding;
     this._scene.background = new THREE.Color().setHSL(0.6, 0, 1);
-    const shaderMaterial = new THREE.ShaderMaterial({
-      uniforms: {},
-      // vertexShader: _VS,
-      fragmentShader: _FS,
-    });
+    // const shaderMaterial = new THREE.ShaderMaterial({
+    //   uniforms: {},
+    //   // vertexShader: _VS,
+    //   fragmentShader: _FS,
+    // });
     // const plane = new THREE.Mesh(
     //   new THREE.PlaneGeometry(100, 100, 10, 10),
     //   // new THREE.MeshStandardMaterial({
@@ -623,15 +623,15 @@ class CharacterControllerDemo {
     });
   }
 
-  _LoadModel() {
-    const loader = new GLTFLoader();
-    loader.load('./resources/thing.glb', (gltf) => {
-      gltf.scene.traverse(c => {
-        c.castShadow = true;
-      });
-      this._scene.add(gltf.scene);
-    });
-  }
+  // _LoadModel() {
+  //   const loader = new GLTFLoader();
+  //   loader.load('./resources/thing.glb', (gltf) => {
+  //     gltf.scene.traverse(c => {
+  //       c.castShadow = true;
+  //     });
+  //     this._scene.add(gltf.scene);
+  //   });
+  // }
 
   _OnWindowResize() {
     this._camera.aspect = window.innerWidth / window.innerHeight;
