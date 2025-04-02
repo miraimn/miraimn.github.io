@@ -1,0 +1,319 @@
+$nav-btn-font-color: rgb(255, 255, 255);
+$nav-btn-font-color2: rgb(255, 255, 255);
+$borderWidth: 2px;
+
+$phoneWidth: 900px;
+
+$selected-btn-font-color: #68a5ca;
+
+@media only screen and (max-width: $phoneWidth) {
+  .nav-btn-text {
+    color: $nav-btn-font-color2;
+  }
+  .nav-btn {
+    &::before,
+    &::after {
+      color: $nav-btn-font-color2;
+    }
+  }
+  .actived {
+    &:after,
+    &:before {
+      border: 0px solid $nav-btn-font-color2;
+    }
+    &:after {
+      border-top: $borderWidth solid $nav-btn-font-color2;
+      border-left: $borderWidth solid $nav-btn-font-color2;
+    }
+    &:before {
+      border-bottom: $borderWidth solid $nav-btn-font-color2;
+      border-right: $borderWidth solid $nav-btn-font-color2;
+    }
+  }
+  .wave-hero {
+    min-height: 400px;
+    .w {
+      margin-top: -220px;
+    }
+  }
+}
+@media only screen and (min-width: $phoneWidth) {
+  .nav-btn-text {
+    color: $nav-btn-font-color;
+  }
+  .nav-btn {
+    &::before,
+    &::after {
+      color: $nav-btn-font-color;
+    }
+  }
+  .actived {
+    &::before{
+      background-color: #ED662D;
+      opacity: 1;
+    }
+    // .nav-btn-text {
+    //   color: #68a5ca;
+    // }
+    // &:after,
+    // &:before {
+    //   border: 0px solid #68a5ca;
+    // }
+    // &:after {
+    //   border-top: $borderWidth solid #68a5ca;
+    //   border-left: $borderWidth solid #68a5ca;
+    // }
+    // &:before {
+    //   border-bottom: $borderWidth solid #68a5ca;
+    //   border-right: $borderWidth solid #68a5ca;
+    // }
+  }
+  .wave-hero {
+    min-height: 400px;
+    .w {
+      margin-top: -220px;
+    }
+  }
+}
+.nav-backGround {
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  position: absolute;
+  padding-left: 50px;
+}
+
+.nav-list {
+  float: left;
+  position: relative;
+  left: 0%;
+}
+
+.nav-btn {
+  background-color: rgba($color: #ffffff, $alpha: 0);
+  margin: 20px;
+  position: relative;
+  align-items: center;
+  transition: transform 0.4s, background-color 0.5s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    border-width: 2px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #ED662D;
+    border-radius: 5px;
+    margin-top: 0px;
+    opacity: 0;
+    transition: all 0.4s;
+  }
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &:hover {
+    background-color: rgba($color: #ffffff, $alpha: 0);
+  }
+  .nav-btn-text {
+    // text-decoration: underline;
+    // font-weight: normal;
+  }
+}
+.actived {
+  margin: 20px;
+  align-items: center;
+  transition: all 0.4s;
+  position: relative;
+  &:after{
+    
+  }
+  &:before {
+    content: " ";
+    // width: 20px;
+    // height: 20px;
+    position: absolute;
+    border-radius: 5px;
+    transition: all 0.4s;
+    width: calc(100% + 2px);
+      height: calc(100% + 2px);
+  }
+  &:after {
+    top: -1px;
+    left: -1px;
+  }
+  &:before {
+    bottom: -1px;
+    right: -1px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  .nav-btn-text {
+    // text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.4s;
+  }
+}
+.nav-btn-base {
+  transform: scale(1);
+  margin-right: 50px;
+  .nav-btn-text {
+    // font-size: 20px;
+    transition: all 0.4s;
+  }
+}
+.nav-btn-text {
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wave-hero {
+  position: absolute;
+  left: 0%;
+  top: -150px;
+  width: 100%;
+  transform: rotateZ(180deg) rotateY(180deg);
+  z-index: -1;
+  transition: all 0.4s;
+  .w {
+    // margin-top: -220px;
+    position: absolute;
+    top: 100%;
+
+    background-position: center;
+    background-repeat: repeat-x;
+  }
+  .wave {
+    margin-top: 0;
+    height: 200px;
+    transform: translateY(-30px);
+  }
+  .wave2 {
+    background: url("../assets/images/whitewave2.svg");
+    @media (min-width: 640px) {
+      @keyframes waveAni1 {
+        0% {
+          margin-left: -960px;
+        }
+        100% {
+          margin-left: 960px;
+        }
+      }
+      animation-name: waveAni1;
+      animation-timing-function: linear;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+    height: 240px;
+    transform: translateY(-85px) scaleY(0.5);
+    background-size: 960px 240px;
+    opacity: 1;
+    left: -1000px;
+    right: -10px;
+  }
+  .wave3 {
+    background: url("../assets/images/whitewave4.svg");
+    @media (min-width: 640px) {
+      @keyframes waveAni2 {
+        0% {
+          margin-left: -880px;
+        }
+        100% {
+          margin-left: 880px;
+        }
+      }
+      animation-name: waveAni2;
+      animation-timing-function: linear;
+      animation-duration: 19s;
+      animation-iteration-count: infinite;
+    }
+    height: 200px;
+    transform: translateY(-100px) scaleY(0.5);
+    background-size: 880px 220px;
+    // opacity: 0.33;
+    left: -900px;
+    right: -10px;
+  }
+  .wave4 {
+    background: url("../assets/images/whitewave3.svg");
+    @media (min-width: 640px) {
+      @keyframes waveAni3 {
+        0% {
+          margin-left: -1120px;
+        }
+        100% {
+          margin-left: 1120px;
+        }
+      }
+      animation-name: waveAni3;
+      animation-timing-function: linear;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+    }
+    height: 160px;
+    transform: translateY(-120px) scaleY(0.6);
+    background-size: 1120px 280px;
+    // opacity: 0.1;
+    left: -1200px;
+    right: -10px;
+  }
+  .wave-background {
+    width: 100%;
+    height: 1000px;
+    background-color: #2D1E6B;
+    z-index: 10;
+    position: absolute;
+    top: 60%;
+  }
+}
+.nav-head {
+  position: fixed;
+  width: 100%;
+  left: 0%;
+  z-index: 10;
+  top: 0%;
+  transition: all 0.4s;
+}
+.nav-head-hide {
+  top: -100%;
+}
+.nav-menu-btn {
+  margin-right: 50px;
+  outline: none;
+  border: 0;
+}
+.nav-menu-btn:focus {
+  border: 0;
+  outline: none;
+}
+
+.nav-menu-btn-icon {
+  // background-color: $nav-btn-font-color;
+}
+
+.waveActive {
+  transition: all 0.4s;
+  top: 200px;
+}
+
+// .nav-bar-logo{
+//   transform:  scale(1);
+//   transition:  all 0.4s;
+//   transform-origin: center;
+//   &:hover{
+//     transform: scale(1.5) translateX(10%);
+//   }
+// }
