@@ -1,0 +1,69 @@
+{
+  "name": "Sigma8Studio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@pmndrs/branding": "^0.0.8",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^2.19.1",
+    "@types/three": "^0.148.1",
+    "ajv": "^8.11.0",
+    "bootstrap": "^5.3.4",
+    "classnames": "^2.5.1",
+    "drei": "^2.2.21",
+    "emailjs": "^4.0.3",
+    "emailjs-com": "^3.2.0",
+    "firebase": "^9.23.0",
+    "leaflet": "^1.9.4",
+    "leva": "^0.9.36",
+    "lodash": "^4.17.21",
+    "matrix-card": "^0.3.0",
+    "react": "^18.3.1",
+    "react-animated-3d-card": "^1.0.2",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^18.3.1",
+    "react-ga": "^2.7.0",
+    "react-google-maps": "^9.4.5",
+    "react-leaflet": "^4.2.1",
+    "react-lorem-ipsum": "^1.4.10",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^5.0.1",
+    "react-three-fiber": "^6.0.13",
+    "sass": "^1.86.3",
+    "styled-components": "^5.3.11",
+    "three": "^0.159.0",
+    "three-stdlib": "^2.35.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build --legacy-peer-deps",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "https://miraimn.github.io",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
